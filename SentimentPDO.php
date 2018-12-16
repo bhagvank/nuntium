@@ -9,7 +9,7 @@
      public function getMaxSentimentId()
 	 {
 	 	$connection = parent::connect();
-	 	$maxSentimentIdSql = "SELECT MAX(SENTIMENTID) AS MAXSENTIMENTID FROM SENTIMENT";
+	 	$maxSentimentIdSql = "SELECT MAX(SENTIMENTID) AS MAXSENTIMENTID FROM sentiment";
 		 $rows = $connection->query($maxSentimentIdSql);
 		 
 		 $maxsentimentid=0;
@@ -28,7 +28,7 @@
      public function  insertSentiment( $sentiment)
       {
       	 $connection = parent::connect();
-         $insertsql = "INSERT INTO SENTIMENT (SENTIMENTID,SENTIMENTSOURCE,SENTIMENTSOURCELINK,SENTIMENTSOURCELINKTYPE) VALUES (:sentimentid,:sentimentsourcename,:sentimentsourcelink,:sentimentsourcelinktype)";
+         $insertsql = "INSERT INTO sentiment (SENTIMENTID,SENTIMENTSOURCE,SENTIMENTSOURCELINK,SENTIMENTSOURCELINKTYPE) VALUES (:sentimentid,:sentimentsourcename,:sentimentsourcelink,:sentimentsourcelinktype)";
 
          try
          {
@@ -53,7 +53,7 @@
       public function updateSentiment($sentiment)
        {
        	 $connection = parent::connect();
-	     $updatesql = "UPDATE SENTIMENT SET SENTIMENTSOURCE=:sentimentsourcename, SENTIMENTSOURCELINK=:sentimentsourcelink,SENTIMENTSOURCELINKTYPE=:sentimentsourcelinktype  WHERE SENTIMENTID=:sentimentsourceid";
+	     $updatesql = "UPDATE sentiment SET SENTIMENTSOURCE=:sentimentsourcename, SENTIMENTSOURCELINK=:sentimentsourcelink,SENTIMENTSOURCELINKTYPE=:sentimentsourcelinktype  WHERE SENTIMENTID=:sentimentsourceid";
 	
 	     try
 	     { 
@@ -79,7 +79,7 @@
         public function deleteSentiment($sentiment)
         {
           $connection = parent::connect();	
-	      $deletesql = "DELETE FROM SENTIMENT WHERE SENTIMENTID=:sentimentid";
+	      $deletesql = "DELETE FROM sentiment WHERE SENTIMENTID=:sentimentid";
 	
 	      try
 	       {
@@ -100,7 +100,7 @@
         public function getSentiment($sentimentId)
 		{
 			$connection = parent::connect();
-	         $selectSQL = "SELECT * FROM SENTIMENT WHERE SENTIMENTID=:sentimentid";
+	         $selectSQL = "SELECT * FROM sentiment WHERE SENTIMENTID=:sentimentid";
 			 
 			 $sentiment = "";
 			 try
@@ -133,7 +133,7 @@
         public function getSentiments()
          {
          	 $connection = parent::connect();
-	         $selectSQL = "SELECT * FROM SENTIMENT";
+	         $selectSQL = "SELECT * FROM sentiment";
 	         $rows = $connection->query($selectSQL);
 	         $sentiments = array();
 	         foreach($rows as $row)

@@ -2,9 +2,9 @@
     
     class DataObject
     {
-    	private $_dsn="mysql:host=127.0.0.1;port=3307;dbname=nuntium";
-        private $_username="root";
-        private $_password="root";
+    	private $_dsn="mysql:host=fdb13.awardspace.net;port=3306;dbname=2148821_iot";
+        private $_username="2148821_iot";
+        private $_password="saibaba1";
 		
     	public function connect()
 		{
@@ -13,6 +13,7 @@
             {
               $connection = new PDO($this->_dsn,$this->_username,$this->_password);
               $connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+              
 			}
 			catch(PDOException $exception)
 			{

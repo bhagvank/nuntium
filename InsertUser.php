@@ -28,7 +28,6 @@ if(isset($_POST['submit']))
   echo("<title>News Portal - Insert User</title>");
   echo("</head>");
   echo("<body>");
-  include "menu.php";
   echo("Created a User </br>");
   echo("<a href='index.php'> Back to Home</a>");
   

@@ -9,7 +9,7 @@
      public function getMaxUserId()
 	 {
 	 	$connection = parent::connect();
-	 	$maxUserIdSql = "SELECT MAX(USERID) AS MAXUSERID FROM USER";
+	 	$maxUserIdSql = "SELECT MAX(USERID) AS MAXUSERID FROM User";
 		 $rows = $connection->query($maxUserIdSql);
 		 
 		 $maxuserid=0;
@@ -28,7 +28,7 @@
      public function  insertUser( $user)
       {
       	 $connection = parent::connect();
-         $insertsql = "INSERT INTO USER (userid,username,password) VALUES (:userid,:username,:password)";
+         $insertsql = "INSERT INTO User (userid,username,password) VALUES (:userid,:username,:password)";
 
          try
          {
@@ -52,7 +52,7 @@
       public function updateUser($user)
        {
        	 $connection = parent::connect();
-	     $updatesql = "UPDATE USER SET USERNAME=:username, PASSWORD=:password WHERE USERID=:userid";
+	     $updatesql = "UPDATE User SET USERNAME=:username, PASSWORD=:password WHERE USERID=:userid";
 	
 	     try
 	     { 
@@ -77,7 +77,7 @@
         public function deleteUser($user)
         {
           $connection = parent::connect();	
-	      $deletesql = "DELETE FROM USER WHERE USERID=:userid";
+	      $deletesql = "DELETE FROM User WHERE USERID=:userid";
 	
 	      try
 	       {
@@ -98,16 +98,18 @@
 		public function checkUserExists($loggedInUser)
 		{
 	         $connection = parent::connect();
-	         $selectSQL = "SELECT * FROM USER WHERE USERNAME=:username";
+	         $selectSQL = "SELECT * FROM User WHERE USERNAME=:username";
 			 
+                        
 			 $user = "";
 			 try
 			 {
 			 $statement = $connection->prepare($selectSQL);
-		     $statement->bindValue(":username",$loggedInUser->getUserName(),PDO::PARAM_INT);
+		     $statement->bindValue(":username",$loggedInUser->getUserName(),PDO::PARAM_STR);
 		     
 	         $statement->execute();
 			 $row = $statement->fetch();
+                         
               $user = new User();
 	        
 	           
@@ -143,7 +145,7 @@
         public function getUser($userid)
 		{
 			$connection = parent::connect();
-	         $selectSQL = "SELECT * FROM USER WHERE USERID=:userid";
+	         $selectSQL = "SELECT * FROM User WHERE USERID=:userid";
 			 
 			 $user = "";
 			 try
@@ -175,7 +177,7 @@
         public function getUsers()
          {
          	 $connection = parent::connect();
-	         $selectSQL = "SELECT * FROM USER";
+	         $selectSQL = "SELECT * FROM User";
 	         $rows = $connection->query($selectSQL);
 	         $users = array();
 	         foreach($rows as $row)

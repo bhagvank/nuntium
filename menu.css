@@ -1,9 +1,9 @@
    body { font-family:Arial, Sans-Serif; font-size:13px; margin:0px;
                background: transparent url(page_bkg.png) repeat scroll top center;}
-        h1 {margin:0px; padding:20px 0 0 20px; color:#FFFFFF}
-        h4 {margin:0px; padding:20px 0 0 20px; color:#FFFFFF}
-        h5 {margin:0px; padding:20px 0 0 20px; color:#FFFFFF}
-        p {padding:20px; color:#dcdcdc;}
+        h1 {margin:0px; padding:20px 0 0 20px; color:#000000}
+        h4 {margin:0px; padding:20px 0 0 20px; color:#000000}
+        h5 {margin:0px; padding:20px 0 0 20px; color:#000000}
+        p {padding:20px; color:#000000;}
         p a {color:#9BD800;}
         p a:hover {color:#B6FF00;}
         #header { height:120px; position:relative;

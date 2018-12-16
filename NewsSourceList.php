@@ -14,16 +14,16 @@ echo "<link rel='stylesheet'' type='text/css' href='menu.css'>";
 echo "<title>News Portal User List</title>";
 
 echo "</head>";
-echo "<body>";
+echo "<body> ";
 
 	  include "menu.php";
 echo "<table border=1>";
 echo "<tr border=1>";
-	echo "<th border=1><h4>News Source Id</h4></th>";
-	echo "<th border=1><h4>News Source Name</h4></th>";
-	echo "<th border=1><h4>News Source Link</h4></th>";
-	echo "<th border=1><h4>News Source Link Type</h4></th>";
-	echo "<th border=1><h4>Update Link</h4></th>";
+	echo "<th border=1><h4><font color=#000000>News Source Id</font></h4></th>";
+	echo "<th border=1><h4><font color=#000000>News Source Name</font></h4></th>";
+	echo "<th border=1><h4><font color=#000000>News Source Link</font></h4></th>";
+	echo "<th border=1><h4><font color=#000000>News Source Link Type</font></h4></th>";
+	echo "<th border=1><h4><font color=#000000>Update Link</font></h4></th>";
 	echo "<th border=1><h4>Delete Link</h4></th>";
 echo "</tr>";	
 	
@@ -32,22 +32,22 @@ foreach($newsSources as $newsSource)
 {
 	echo "<tr border=1>";
 	echo "<td border=1>";
-	echo "<h5>" .$newsSource->getNewsSourceId() ."</h5>";
+	echo "<h5><font color=#000000> ".$newsSource->getNewsSourceId() ."</font></h5>";
 	echo "</td>";
 	echo "<td border=1>";
-	echo "<h5>" .$newsSource->getNewsSourceName() ."</h5>" ;
+	echo "<h5><font color=#000000> " .$newsSource->getNewsSourceName() ." </font></h5>" ;
 	echo "</td>";
 	echo "<td border=1>";
-	echo "<h5>" .$newsSource->getNewsSourceLink() ."</h5>";
+	echo "<h5><font color=#000000> " .$newsSource->getNewsSourceLink() ."</font></h5>";
 	echo "</td>";
 	echo "<td border=1>";
-	echo "<h5>" .$newsSource->getNewsSourceLinkType() ."</h5>";
+	echo "<h5><font color=#000000> " .$newsSource->getNewsSourceLinkType() ." </font></h5>";
 	echo "</td>";
 	echo "<td border=1>";
-	echo "<a href='UpdateNewsSource.php?id=" .$newsSource->getNewsSourceId() ."'> Update News Source </a>";
+	echo "<a href='UpdateNewsSource.php?id=" .$newsSource->getNewsSourceId() ."'><font color=#000000> Update News Source</font> </a>";
 	echo "</td>";
 	echo "<td border=1>";
-	echo "<a href='DeleteNewsSource.php?id=" .$newsSource->getNewsSourceId() ."'> Delete News Source </a>";
+	echo "<a href='DeleteNewsSource.php?id=" .$newsSource->getNewsSourceId() ."'> <font color=#000000>Delete News Source</font> </a>";
 	echo "</td>";
 	echo "</tr>";
 	
@@ -55,7 +55,7 @@ foreach($newsSources as $newsSource)
 
 echo "</table>";
 
-echo("<a href='Home.php'> Back to Home</a>");
+echo("<a href='Home.php'> <font color=#000000>Back to Home</font></a>");
 echo "</body>";
 echo "</html>";
 

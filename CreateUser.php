@@ -7,22 +7,23 @@
 <title>News Portal - Create User</title>
 	</head>
 <body>
-	<?php
-	  include "menu.php";
-	?>
+<center><img src="nuntium.png"></center>	
 <form action="InsertUser.php" method="post">
-
-<h5>Input Username</h5>
-<br>
-<input type="text" name="username">
-<br>
-<h5>Input Password</h5>
-<br>
-<input type="text" name="password">
-<br>
-<h5>Submit</h5>
-<input type="submit" name="submit" value="submit">
-
+<p> Input User Credentials</p>
+<table>
+<tr>
+<td> Username</td>
+<td><input type="text" name="username"></td>
+</tr>
+<tr>
+<td> Password</h5>
+<td><input type="text" name="password"></td>
+</tr>
+<tr>
+<td>Submit</td>
+<td><input type="submit" name="submit" value="submit"></td>
+</tr>
+</table>
 </form>
 
 </body>

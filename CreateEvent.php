@@ -11,24 +11,28 @@
 	  include "menu.php";
 	?>
 <form action="InsertEvent.php" method="post">
-<h5>Input Event Type</h5>
-<br>
-<input type="text" name="eventtype">
-<br>
-<h5>Input Event Source</h5>
-<br>
-<input type="text" name="eventsourcename">
-<br>
-<h5>Input Event Source Link</h5>
-<br>
-<input type="text" name="eventsourcelink">
-<br>
-<h5>Input Event Source Link Type</h5>
-<input type="text" name="eventsourcelinktype">
-<br>
-<h5>submit</h5>
-<br>
-<input type="submit" name="submit" value="submit">
+<table>
+<tr>
+<td>Input Event Type</td>
+<td><input type="text" name="eventtype"></td>
+</tr>
+<tr>
+<td>Input Event Source</td>
+<td><input type="text" name="eventsourcename"></td>
+</tr>
+<tr>
+<td>Input Event Source Link</td>
+<td><input type="text" name="eventsourcelink"></td>
+</tr>
+<tr>
+<td>Input Event Source Link Type</td>
+<td><input type="text" name="eventsourcelinktype"></td>
+</tr>
+<tr>
+<td>submit</td>
+<td><input type="submit" name="submit" value="submit"></td>
+</tr>
+</table>
 
 </form>
 

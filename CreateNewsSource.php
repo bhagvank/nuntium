@@ -11,23 +11,23 @@
 	  include "menu.php";
 	?>
 <form action="InsertNewsSource.php" method="post">
-
-<h5>Input NewsSource</h5>
-<br>
-<input type="text" name="newssourcename">
-<br>
-<h5>Input NewsSourceLink</h5>
-<br>
-<input type="text" name="newssourcelink">
-<br>
-
-<h5>Input NewsSourceLinkType</h5>
-<br>
-<input type="text" name="newssourcelinktype">
-<br>
-<h5>Submit</h5>
-<input type="submit" name="submit" value="submit">
-
+<table>
+<tr>
+<td> NewsSource</td>
+<td><input type="text" name="newssourcename"></td>
+</tr>
+<tr>
+<td> NewsSourceLink </td>
+<td><input type="text" name="newssourcelink"></td>
+</tr>
+<tr>
+<td> NewsSourceLinkType </td>
+<td><input type="text" name="newssourcelinktype"></td>
+</tr>
+<tr>
+<td> Submit </td>
+<td><input type="submit" name="submit" value="submit"></td>
+</tr>
 </form>
 
 </body>

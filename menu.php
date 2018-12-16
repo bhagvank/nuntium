@@ -1,4 +1,5 @@
-
+<center><img src="nuntium.png"></center>	
+<p>Welcome to Nuntium - Online News Sentiment Analysis Portal</p>
 <div id="header">
   <ul id="nav">
   	

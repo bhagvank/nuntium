@@ -9,7 +9,7 @@
      public function getMaxNewsSourceId()
 	 {
 	 	$connection = parent::connect();
-	 	$maxNewsSourceIdSql = "SELECT MAX(NEWSSOURCEID) AS MAXNEWSSOURCEID FROM NEWSSOURCE";
+	 	$maxNewsSourceIdSql = "SELECT MAX(NEWSSOURCEID) AS MAXNEWSSOURCEID FROM newssource";
 		 $rows = $connection->query($maxNewsSourceIdSql);
 		 
 		 $maxnewssourceid=0;
@@ -28,7 +28,7 @@
      public function  insertNewsSource( $newsSource)
       {
       	 $connection = parent::connect();
-         $insertsql = "INSERT INTO NEWSSOURCE (NEWSSOURCEID,NEWSSOURCENAME,NEWSSOURCELINK,NEWSSOURCELINKTYPE) VALUES (:newssourceid,:newssourcename,:newssourcelink,:newssourcelinktype)";
+         $insertsql = "INSERT INTO newssource (NEWSSOURCEID,NEWSSOURCENAME,NEWSSOURCELINK,NEWSSOURCELINKTYPE) VALUES (:newssourceid,:newssourcename,:newssourcelink,:newssourcelinktype)";
 
          try
          {
@@ -53,7 +53,7 @@
       public function updateNewsSource($newsSource)
        {
        	 $connection = parent::connect();
-	     $updatesql = "UPDATE NEWSSOURCE SET NEWSSOURCEID=:newssourceid, NEWSSOURCENAME=:newssourcename, NEWSSOURCELINK=:newssourcelink,NEWSSOURCELINKTYPE=:newssourcelinktype  WHERE NEWSSOURCEID=:newssourceid";
+	     $updatesql = "UPDATE newssource SET NEWSSOURCEID=:newssourceid, NEWSSOURCENAME=:newssourcename, NEWSSOURCELINK=:newssourcelink,NEWSSOURCELINKTYPE=:newssourcelinktype  WHERE NEWSSOURCEID=:newssourceid";
 	
 	     try
 	     { 
@@ -79,7 +79,7 @@
         public function deleteNewsSource($newsSource)
         {
           $connection = parent::connect();	
-	      $deletesql = "DELETE FROM NEWSSOURCE WHERE NEWSSOURCEID=:newssourceid";
+	      $deletesql = "DELETE FROM newssource WHERE NEWSSOURCEID=:newssourceid";
 	
 	      try
 	       {
@@ -100,7 +100,7 @@
         public function getNewsSource($newsSourceId)
 		{
 			$connection = parent::connect();
-	         $selectSQL = "SELECT * FROM NEWSSOURCE WHERE NEWSSOURCEID=:newssourceid";
+	         $selectSQL = "SELECT * FROM newssource WHERE NEWSSOURCEID=:newssourceid";
 			 
 			 $newsSource = "";
 			 try
@@ -133,7 +133,7 @@
         public function getNewsSources()
          {
          	 $connection = parent::connect();
-	         $selectSQL = "SELECT * FROM NEWSSOURCE";
+	         $selectSQL = "SELECT * FROM newssource";
 	         $rows = $connection->query($selectSQL);
 	         $newssources = array();
 	         foreach($rows as $row)

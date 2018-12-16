@@ -9,7 +9,7 @@
      public function getMaxTravelAdvisoryId()
 	 {
 	 	$connection = parent::connect();
-	 	$maxTravelAdvisoryIdSql = "SELECT MAX(TRAVELADVISORYID) AS MAXTRAVELADVISORYID FROM TRAVELADVISORY";
+	 	$maxTravelAdvisoryIdSql = "SELECT MAX(TRAVELADVISORYID) AS MAXTRAVELADVISORYID FROM traveladvisory";
 		 $rows = $connection->query($maxTravelAdvisoryIdSql);
 		 
 		 $maxnewssourceid=0;
@@ -28,7 +28,7 @@
      public function  insertTravelAdvisory( $travelAdvisory)
       {
       	 $connection = parent::connect();
-         $insertsql = "INSERT INTO TRAVELADVISORY (TRAVELADVISORYID,TRAVELADVISORYSOURCE,TRAVELADVISORYLINK,TRAVELADVISORYLINKTYPE) VALUES (:traveladvisoryid,:traveladvisorysourcename,:traveladvisorysourcelink,:traveladvisorysourcelinktype)";
+         $insertsql = "INSERT INTO traveladvisory (TRAVELADVISORYID,TRAVELADVISORYSOURCE,TRAVELADVISORYLINK,TRAVELADVISORYLINKTYPE) VALUES (:traveladvisoryid,:traveladvisorysourcename,:traveladvisorysourcelink,:traveladvisorysourcelinktype)";
 
          try
          {
@@ -53,7 +53,7 @@
       public function updateTravelAdvisory($travelAdvisory)
        {
        	 $connection = parent::connect();
-	     $updatesql = "UPDATE TRAVELADVISORY SET TRAVELADVISORYSOURCE=:traveladvisorysourcename, TRAVELADVISORYLINK=:traveladvisorysourcelink,TRAVELADVISORYLINKTYPE=:traveladvisorysourcelinktype  WHERE TRAVELADVISORYID=:traveladvisoryid";
+	     $updatesql = "UPDATE traveladvisory SET TRAVELADVISORYSOURCE=:traveladvisorysourcename, TRAVELADVISORYLINK=:traveladvisorysourcelink,TRAVELADVISORYLINKTYPE=:traveladvisorysourcelinktype  WHERE TRAVELADVISORYID=:traveladvisoryid";
 	
 	     try
 	     { 
@@ -79,7 +79,7 @@
         public function deleteTravelAdvisory($travelAdvisory)
         {
           $connection = parent::connect();	
-	      $deletesql = "DELETE FROM TRAVELADVISORY WHERE TRAVELADVISORYID=:traveladvisoryid";
+	      $deletesql = "DELETE FROM traveladvisory WHERE TRAVELADVISORYID=:traveladvisoryid";
 	
 	      try
 	       {
@@ -100,7 +100,7 @@
         public function getTravelAdvisory($travelAdvisoryId)
 		{
 			$connection = parent::connect();
-	         $selectSQL = "SELECT * FROM TRAVELADVISORY WHERE TRAVELADVISORYID=:traveladvisoryid";
+	         $selectSQL = "SELECT * FROM traveladvisory WHERE TRAVELADVISORYID=:traveladvisoryid";
 			 
 			 $travelAdvisory = "";
 			 try
@@ -133,7 +133,7 @@
         public function getTravelAdvisories()
          {
          	 $connection = parent::connect();
-	         $selectSQL = "SELECT * FROM TRAVELADVISORY";
+	         $selectSQL = "SELECT * FROM traveladvisory";
 	         $rows = $connection->query($selectSQL);
 	         $traveladvisories = array();
 	         foreach($rows as $row)

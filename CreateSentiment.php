@@ -11,22 +11,22 @@
 	  include "menu.php";
 	?>
 <form action="InsertSentimentSource.php" method="post">
-
-<h5>Input Sentiment Source</h5>
-<br>
-<input type="text" name="sentimentsourcename">
-<br>
-<h5>Input Sentiment Source Link</h5>
-<br>
-<input type="text" name="sentimentsourcelink">
-<br>
-
-<h5>Input Sentiment Source Link Type</h5>
-<br>
-<input type="text" name="sentimentsourcelinktype">
-<br>
-<h5>Submit</h5>
-<input type="submit" name="submit" value="submit">
+<table>
+<tr>
+<td> Sentiment Source </td>
+<td><input type="text" name="sentimentsourcename"></td>
+</tr>
+<tr>
+<td> Sentiment Source Link </td>
+<td><input type="text" name="sentimentsourcelink"></td>
+</tr>
+<tr>
+<td> Sentiment Source Link Type </td>
+<td><input type="text" name="sentimentsourcelinktype"></td>
+</tr>
+<tr>
+<td> Submit</td>
+<td><input type="submit" name="submit" value="submit">
 
 </form>
 

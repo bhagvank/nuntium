@@ -9,7 +9,7 @@
      public function getMaxEventId()
 	 {
 	 	$connection = parent::connect();
-	 	$maxEventIdSql = "SELECT MAX(EVENTID) AS EVENTID FROM EVENT";
+	 	$maxEventIdSql = "SELECT MAX(EVENTID) AS EVENTID FROM event";
 		 $rows = $connection->query($maxEventIdSql);
 		 
 		 $maxeventid=0;
@@ -28,7 +28,7 @@
      public function  insertEvent( $event)
       {
       	 $connection = parent::connect();
-         $insertsql = "INSERT INTO EVENT (EVENTID,EVENTTYPE,EVENTSOURCENAME,EVENTSOURCELINK,EVENTSOURCELINKTYPE) VALUES (:eventid,:eventtype,:eventsourcename,:eventsourcelink,:eventsourcelinktype)";
+         $insertsql = "INSERT INTO event (EVENTID,EVENTTYPE,EVENTSOURCENAME,EVENTSOURCELINK,EVENTSOURCELINKTYPE) VALUES (:eventid,:eventtype,:eventsourcename,:eventsourcelink,:eventsourcelinktype)";
 
          try
          {
@@ -54,7 +54,7 @@
       public function updateEvent($event)
        {
        	 $connection = parent::connect();
-	     $updatesql = "UPDATE EVENT SET EVENTTYPE=:eventtype,EVENTSOURCENAME=:eventsourcename, EVENTSOURCELINK=:eventsourcelink,EVENTSOURCELINKTYPE=:eventsourcelinktype  WHERE EVENTID=:eventid";
+	     $updatesql = "UPDATE event SET EVENTTYPE=:eventtype,EVENTSOURCENAME=:eventsourcename, EVENTSOURCELINK=:eventsourcelink,EVENTSOURCELINKTYPE=:eventsourcelinktype  WHERE EVENTID=:eventid";
 	
 	     try
 	     { 
@@ -81,7 +81,7 @@
         public function deleteEvent($event)
         {
           $connection = parent::connect();	
-	      $deletesql = "DELETE FROM EVENT WHERE EVENTID=:eventid";
+	      $deletesql = "DELETE FROM event WHERE EVENTID=:eventid";
 	
 	      try
 	       {
@@ -102,7 +102,7 @@
         public function getEvent($eventId)
 		{
 			$connection = parent::connect();
-	         $selectSQL = "SELECT * FROM EVENT WHERE EVENTID=:eventid";
+	         $selectSQL = "SELECT * FROM event WHERE EVENTID=:eventid";
 			 
 			 $event = "";
 			 try
@@ -136,7 +136,7 @@
         public function getEvents()
          {
          	 $connection = parent::connect();
-	         $selectSQL = "SELECT * FROM EVENT";
+	         $selectSQL = "SELECT * FROM event";
 	         $rows = $connection->query($selectSQL);
 	         $events = array();
 	         foreach($rows as $row)
